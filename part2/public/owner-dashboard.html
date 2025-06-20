@@ -155,7 +155,9 @@
 
       let xhttp = new XMLHttpRequest();
 
-      xhttp.open('GET', '/api/users/dogs')
+      xhttp.open('GET', '/api/users/dogs', true);
+      xhttp.setRequestHeader("Content-type", "application/json");
+      
     }
 
 }

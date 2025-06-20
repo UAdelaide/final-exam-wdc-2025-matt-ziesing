@@ -95,6 +95,7 @@ function login(){
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState === 4 && xhttp.status === 200) {
       let jsonOutput = JSON.parse(this.responseText);
+      let 
       let dogPic;
 
       let picture_xhttp = new XMLHttpRequest();
@@ -108,7 +109,7 @@ function login(){
       picture_xhttp.send();
 
       for (let i = 0; i < jsonOutput.length; i++) {
-        let 
+        let wrapper = document.createElement(tr);
       }
     }
   }

@@ -161,7 +161,7 @@
           let jsonOutput = JSON.parse(this.responseText);
           for (let i = 0; i < jsonOutput.length; i++) {
             let newOption = document.createElement('option');
-            newOption.value = jsonOutput[i];
+            newOption.value = jsonOutput[i].name;
             newOption.textContent = jsonOutput[i];
 
             dogSelect.appendChild(newOption);

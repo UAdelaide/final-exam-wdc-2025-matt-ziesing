@@ -98,16 +98,6 @@ function login(){
       let table = document.getElementById('dog-table');
       let dogPic;
 
-      let picture_xhttp = new XMLHttpRequest();
-      picture_xhttp.onreadystatechange = function() {
-        if (picture_xhttp.readyState === 4 && picture_xhttp.status === 200) {
-          let dogOutput = JSON.parse(this.responseText);
-          dogPic = dogOutput.data;
-        }
-      }
-      picture_xhttp.open('GET', '/api/users/dogPic');
-      picture_xhttp.send();
-
       for (let i = 0; i < jsonOutput.length; i++) {
         let wrapper = document.createElement('tr');
 

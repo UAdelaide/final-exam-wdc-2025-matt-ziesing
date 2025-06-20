@@ -17,7 +17,7 @@
             if (xhttp.readyState === 4 && xhttp.status === 200) {
                 let jsonOutput = this.responseText;
                 console.log(jsonOutput);
-                let image = jsonOutput.data.message;
+                let image = jsonOutput.data;
 
                 body.style.backgroundImage = url(image);
             }

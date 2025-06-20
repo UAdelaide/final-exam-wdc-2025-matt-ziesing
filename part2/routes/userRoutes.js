@@ -58,11 +58,11 @@ router.post('/login', async (req, res) => {
 // Get Dog Name from database route
 router.get('/dogInfo', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
+    const [rows] = await db.query('SELECT name FROM Dogs');
     res.json(rows);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
 });
 
-module.exports = 
+module.exports = router;

@@ -28,6 +28,11 @@ let db;
       database: 'DogWalkService'
     });
 
+    app.use(function(req, res, next) {
+    req.pool = dbConnectionPool;
+    next();
+});
+
     // Insert data if table is empty
     const [WalkApps] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
     if (WalkApps[0].count === 0) {

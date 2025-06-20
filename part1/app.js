@@ -86,8 +86,8 @@ app.get('/api/walkers/summary', async (req, res) => {
                                                 total_ratings INT NOT NULL,
                                                 average_rating INT NOT NULL,
                                                 completed_walks INT NOT NULL,
-                                                FOREIGN KEY (walker_id) REFERENCES 
-                                                )`);
+                                                FOREIGN KEY (walker_id) REFERENCES Users(user_id)
+                                                );`);
     res.json(walkersSummary);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch Walkers Summary' });

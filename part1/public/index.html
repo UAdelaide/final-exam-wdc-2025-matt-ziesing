@@ -15,7 +15,8 @@
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (xhttp.readyState === 4 && xhttp.status === 200) {
-                let jsonOutput = this.responseText.data.message;
+                let jsonOutput = this.responseText
+                
             }
         }
         xhttp.open('GET', '/dogPic', true);

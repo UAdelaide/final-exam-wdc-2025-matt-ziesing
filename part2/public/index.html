@@ -57,7 +57,7 @@ function login(){
             else if (user_details.role === 'walker') {
               window.location.href = '/walker-dashboard.html';
             }
-            console.log(user_specific);
+            console.log(user_details);
         } else if (this.readyState === 4 && this.status >= 400) {
             alert("Login failed");
         }

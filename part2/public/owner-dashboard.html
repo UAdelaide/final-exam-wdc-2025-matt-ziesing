@@ -174,31 +174,7 @@ let userData = localStorage.getItem('user');
       xhttp.open('GET', '/api/users/dogs?user_id='+encodeURIComponent(userSpecific.user.user_id), true);
       xhttp.setRequestHeader("Content-type", "application/json");
       xhttp.send();
-    }
     });
-      let userData = localStorage.getItem('user');
-      let userSpecific = JSON.parse(userData);
-
-      let dogSelect = document.getElementById('dogs');
-
-      let xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          let jsonOutput = JSON.parse(this.responseText);
-          console.log(jsonOutput);
-          for (let i = 0; i < jsonOutput.length; i++) {
-            let newOption = document.createElement('option');
-            newOption.value = jsonOutput[i].name;
-            newOption.textContent = jsonOutput[i].name;
-
-            dogSelect.appendChild(newOption);
-          }
-        }
-      }
-
-      xhttp.open('GET', '/api/users/dogs?user_id='+encodeURIComponent(userSpecific.user.user_id), true);
-      xhttp.setRequestHeader("Content-type", "application/json");
-      xhttp.send();
     }
   </script>
 

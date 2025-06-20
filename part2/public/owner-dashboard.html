@@ -152,14 +152,10 @@
 
       let userData = localStorage.getItem('user');
       let userSpecific = JSON.parse(userData);
-      console.log(userSpecific.user.user_id);
-      let user_id = {
-        userData: userSpecific.user.user_id
-      };
 
       let xhttp = new XMLHttpRequest();
 
-      xhttp.open('GET', '/api/users/dogs?user_id=', true);
+      xhttp.open('GET', '/api/users/dogs?user_id='+encodeURIComponent(userSpecific.user.user_id)+, true);
       xhttp.setRequestHeader("Content-type", "application/json");
       xhttp.send(JSON.stringify(user_id));
     }

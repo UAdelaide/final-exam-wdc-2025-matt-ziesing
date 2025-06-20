@@ -155,8 +155,8 @@
 
       let xhttp = new XMLHttpRequest();
       if (this.readyState === 4 && this.status === 200) {
-        let newOption = document.createElement('option');
-        let jsonOutput = 
+        let jsonOutput = JSON.parse(this.responseText);
+        let name
       }
 
       xhttp.open('GET', '/api/users/dogs?user_id='+encodeURIComponent(userSpecific.user.user_id), true);

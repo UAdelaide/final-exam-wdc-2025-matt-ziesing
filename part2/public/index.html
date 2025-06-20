@@ -97,7 +97,7 @@ function login(){
       let jsonOutput = JSON.parse(this.responseText);
 
       let picture_xhttp = new XMLHttpRequest();
-      picture_xhttp.open
+      picture_xhttp.open('GET', '/api/users/dogPic');
     }
   }
   xhttp.open('GET', '/api/users/allDogs', true);

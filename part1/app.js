@@ -81,7 +81,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [walkersSummary] = await db.execute(`CREATE TABLE WalkerSummary (
-                                                )`);
+                                                summary_id INT  AUTO_INCREMENT)`);
     res.json(walkersSummary);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch Walkers Summary' });

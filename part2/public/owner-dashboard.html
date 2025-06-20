@@ -157,7 +157,7 @@
 
       xhttp.open('GET', '/api/users/dogs', true);
       xhttp.setRequestHeader("Content-type", "application/json");
-      
+      xhttp.send(JSON.stringify(userData));
     }
 
 }

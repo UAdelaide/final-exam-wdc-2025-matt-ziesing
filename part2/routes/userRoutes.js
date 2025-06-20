@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
 // Get Dog Name from database route
 router.get('/dogInfo', async (req, res) => {
   const userID = localStorage.getItem('user');
-  let owner_id = express.json.
+  let owner_id = JSON.parse(userID);
 
   try {
     const [rows] = await db.query(`

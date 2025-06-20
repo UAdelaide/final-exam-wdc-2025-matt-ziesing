@@ -70,8 +70,8 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [dogList] = await db.execute(`SELECT request_id, name, requested_time, duration_minutes, location,
-                                        'username FROM WalkRequests w JOIN Dogs d ON w.dog_id = d.dog_id JOIN Users u ON d.owner_id = u.user_id',
-                                        'WHERE w.status = "open"`);
+                                        username FROM WalkRequests w JOIN Dogs d ON w.dog_id = d.dog_id JOIN Users u ON d.owner_id = u.user_id
+                                        WHERE w.status = "open"`);
     res.json(dogList);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch Open Requests' });

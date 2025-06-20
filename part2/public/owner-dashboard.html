@@ -151,8 +151,8 @@
     window.location.href = '/';
 
       let userData = localStorage.getItem('user');
-      let user = JSON.parse(userData);
-      console.log(user.user.user_id);
+      let userSpecific = JSON.parse(userData);
+      console.log(userSpecific.user.user_id);
       let user_id = {
         userData: user.user.user_id
       };

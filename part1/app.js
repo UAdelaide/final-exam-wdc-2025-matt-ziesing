@@ -65,8 +65,8 @@ let db;
       `);
     }
 
-    const [WalkRatings] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
-    if (WalkRatings[0].count === 0) {
+    const [WalkerSummary] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
+    if (WalkerSummary[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments, rated_at) VALUES
         (1, 2, 3, 5, 'Great Walker. Dog very happy.', '2025-06-10 13:00:00'),

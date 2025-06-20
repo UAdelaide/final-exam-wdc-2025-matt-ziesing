@@ -136,11 +136,11 @@
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
 
-    let user 
+    let user
 
     // Open connection to server & send the post data using a POST request
-    xmlhttp.open("POST", "/users/logout", true);
-    xmlhttp.send();
+    xmlhttp.open("POST", "/api/users/loging", true);
+    xmlhttp.send(JSON.stringify(user));
 
 }
   </script>

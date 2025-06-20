@@ -13,7 +13,7 @@ router.get('/api/dogs', function(req, res, next) {
       return;
     }
 
-    var query = "SELECT first_name, last_name from actor";
+    var query = "SELECT name, size, username from D";
     connection.query(query, function(error, rows, field) {
       connection.release();
       if (error) {

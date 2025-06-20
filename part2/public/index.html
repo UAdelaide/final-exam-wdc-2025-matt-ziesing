@@ -121,7 +121,9 @@ function login(){
 
         let size = jsonOutput[i].size;
         let sizeWrapper = document.createElement('td');
-        
+        sizeWrapper.textContent = size;
+
+        let ownerID = jsonOutput[i].owner_id;
       }
     }
   }

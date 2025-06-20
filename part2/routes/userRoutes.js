@@ -64,7 +64,7 @@ router.get('/dogInfo', function(req, res) {
       }
 
       var UserID = localStorage.getItem('user');
-      var query = "SELECT name, member_since FROM users WHERE user_id = ?";
+      var query = "SELECT name, FROM Dogs WHERE user_id = ?";
       connection.query(query, [UserID], function(error, rows, fields) {
           connection.release();
           if (err) {

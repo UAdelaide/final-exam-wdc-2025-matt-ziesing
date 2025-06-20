@@ -16,9 +16,9 @@
         xhttp.onreadystatechange = function() {
             if (xhttp.readyState === 4 && xhttp.status === 200) {
                 let jsonOutput = this.responseText;
-                let image = jsonOutput.data.
+                let image = jsonOutput.data.message;
 
-                body.style.backgroundImage = 'url()'
+                body.style.backgroundImage = 'url(image)';
             }
         }
     </script>

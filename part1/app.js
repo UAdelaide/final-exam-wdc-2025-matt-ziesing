@@ -36,11 +36,14 @@ let db;
     });
 
     await db.execute(`
-      CREATE TABLE IF NOT EXISTS books (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        title VARCHAR(255),
-        author VARCHAR(255)
-      )
+    CREATE TABLE WalkerSummary (
+    summary_id INT  AUTO_INCREMENT PRIMARY KEY,
+    walker_id INT NOT NULL,
+    total_ratings INT NOT NULL,
+    average_rating INT NOT NULL,
+    completed_walks INT NOT NULL,
+    FOREIGN KEY (walker_id) REFERENCES Users(user_id)
+    )
     `);
 
     // Insert data if table is empty

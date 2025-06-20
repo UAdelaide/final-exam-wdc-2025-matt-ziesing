@@ -6,17 +6,23 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
-<body>
+<body">
     <h1>Welcome to the Dog Walking Service!</h1>
 
 
     <script>
         let body = document.getElementsByClassName('body')[0];
-        fetch('https://dog.ceo/api/breeds/image/random')
-        .then(response => response.json())
-        .then(data => {
-            body.backgroundImage = data.message;
-        })
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState === 4 && xhttp.status === 200) {
+                let jsonOutput = this.responseText;
+                let image = jsonOutput.data.message;
+
+                body.style.backgroundImage = 'url(image)';
+            }
+        }
+        xhttp.open('GET', '/dogPic', true);
+        xhttp.send();
     </script>
 </body>
 </html>

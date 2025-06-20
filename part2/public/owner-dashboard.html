@@ -159,7 +159,9 @@
         for (let i = 0; i < jsonOutput.length; i++) {
           let newOption = document.createElement('option');
           newOption.value = jsonOutput.name[i];
+          newOption.textContent = jsonOutput.name[i];
         }
+        document.
       }
 
       xhttp.open('GET', '/api/users/dogs?user_id='+encodeURIComponent(userSpecific.user.user_id), true);

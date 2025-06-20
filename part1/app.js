@@ -71,8 +71,7 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [openRequests] = await db.execute(`SELECT request_id, name AS dog_name, requested_time, duration_minutes,
-         location,
-                                        username FROM WalkRequests w JOIN Dogs d ON w.dog_id = d.dog_id JOIN Users u ON d.owner_id = u.user_id
+                                            location, username FROM WalkRequests w JOIN Dogs d ON w.dog_id = d.dog_id JOIN Users u ON d.owner_id = u.user_id
                                         WHERE w.status = "open"`);
     res.json(openRequests);
   } catch (err) {

@@ -11,6 +11,8 @@ router.get('/dogPic', async(req, res, next) => {
 
   try {
     let response = await fetch('https://dog.ceo/api/breeds/image/random');
+  } catch (error) {
+    res.send()
   }
 })
 

@@ -14,7 +14,7 @@ let db;
     // Connect to MySQL without specifying a database
     const connection = await mysql.createConnection({
       host: 'localhost',
-      user: 'root',
+      user: 'root'
     });
 
     // Create the database if it doesn't exist

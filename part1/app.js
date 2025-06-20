@@ -35,6 +35,14 @@ let db;
       database: 'DogWalkService'
     });
 
+    await db.execute(`
+      CREATE TABLE IF NOT EXISTS books (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(255),
+        author VARCHAR(255)
+      )
+    `);
+
     // Insert data if table is empty
     const [WalkApps] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
     if (WalkApps[0].count === 0) {

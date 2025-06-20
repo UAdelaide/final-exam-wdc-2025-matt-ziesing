@@ -10,7 +10,7 @@ router.get('/dogPic', async(req, res, next) => {
   res.set('Content-Type', 'application/json');
 
   try {
-    let response = await fetch('https://dog.ceo/api/breeds/image/random');
+    let response = await fetch('https://dog.ceo/api/breeds/image/random/10');
     let data = await response.json();
     res.json({ data: data.message });
   } catch (error) {

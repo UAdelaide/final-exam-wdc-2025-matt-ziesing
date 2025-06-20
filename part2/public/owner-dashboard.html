@@ -152,8 +152,8 @@
 
     function showDogs() {
       let userData = localStorage.getItem('user');
-      let user 
-      let userData = {
+      let user = JSON.parse(uderData)
+      let user_id = {
         user: localStorage.getItem('user')
       };
 
@@ -161,7 +161,7 @@
 
       xhttp.open('GET', '/api/users/dogs', true);
       xhttp.setRequestHeader("Content-type", "application/json");
-      xhttp.send(JSON.stringify(userData));
+      xhttp.send(JSON.stringify(user_id));
     }
 
 }

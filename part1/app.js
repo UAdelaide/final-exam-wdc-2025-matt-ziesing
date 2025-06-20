@@ -42,7 +42,6 @@ let db;
         INSERT INTO WalkApplications (request_id, walker_id, applied_at, status) VALUES
         (1, 2, '2025-04-19 11:30:00, 'accepted'),
         (3, 4, '2025-06-19 11:30:00', 'rejected'),
-        (4, 5, '2025-06-11 11:30:00', 'pending')
       `);
     }
 
@@ -52,7 +51,6 @@ let db;
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments, rated_at) VALUES
         (1, 2, 3, 5, 'Great Walker. Dog very happy.', '2025-06-10 13:00:00'),
         (3, 4, 2, 5, 'Really happy with their service', '2025-06-11 12:00:00'),
-        (2, 5, 1, 2, 'Why is my dog covered in mud again?', '2025-05-10 16:00:00')
       `);
     }
   } catch (err) {

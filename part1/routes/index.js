@@ -6,4 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/dogImage', async())
+
 module.exports = router;

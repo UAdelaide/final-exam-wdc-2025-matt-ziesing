@@ -94,7 +94,10 @@ function login(){
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState === 4 && xhttp.status === 200) {
-      let jsonOutput = JSON.parse(this.ready)
+      let jsonOutput = JSON.parse(this.responseText);
+
+      let picture_xhttp = new XMLHttpRequest();
+      
     }
   }
   xhttp.open('GET', '/api/users/allDogs', true);

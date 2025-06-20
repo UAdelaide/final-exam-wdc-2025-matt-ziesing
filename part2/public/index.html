@@ -50,9 +50,9 @@ function login(){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             alert("Welcome "+this.responseText);
-        } else if (this.readyState === 4 && this.status >= 400) {
-            alert("Login failed 1");
-        }
+        } //else if (this.readyState === 4 && this.status >= 400) {
+            //alert("Login failed 1");
+        //}
     };
 
     // Open connection to server & send the post data using a POST request

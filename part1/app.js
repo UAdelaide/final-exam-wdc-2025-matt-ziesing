@@ -7,6 +7,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mysql = require('mysql');
 
+let db;
+
 (async () => {
   try {
     // Connect to MySQL without specifying a database

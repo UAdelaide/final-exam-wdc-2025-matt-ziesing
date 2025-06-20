@@ -156,7 +156,10 @@
       let xhttp = new XMLHttpRequest();
       if (this.readyState === 4 && this.status === 200) {
         let jsonOutput = JSON.parse(this.responseText);
-        let name
+        let dogNames;
+        for (let i = 0; i < jsonOutput.length; i++) {
+          let newOption = document.creat
+        }
       }
 
       xhttp.open('GET', '/api/users/dogs?user_id='+encodeURIComponent(userSpecific.user.user_id), true);

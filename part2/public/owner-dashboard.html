@@ -162,7 +162,7 @@
           for (let i = 0; i < jsonOutput.length; i++) {
             let newOption = document.createElement('option');
             newOption.value = jsonOutput[i].name;
-            newOption.textContent = jsonOutput[i];
+            newOption.textContent = jsonOutput[i].name;
 
             dogSelect.appendChild(newOption);
           }

@@ -17,7 +17,10 @@
                 let jsonOutput = this.responseText;
 
                 let image = document.createElement('img');
-                img.src = json
+                img.src = jsonOutput.data;
+                img.alt = "Image of Dog";
+
+                
             }
         }
         xhttp.open('GET', '/dogPic', true);

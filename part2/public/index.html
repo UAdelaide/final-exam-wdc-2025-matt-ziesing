@@ -94,11 +94,13 @@ function login(){
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState === 4 && xhttp.status === 200) {
-
+      let jsonOutput = JSON.parse(this.ready)
     }
   }
   xhttp.open('GET', '/api/users/allDogs', true);
   xhttp.send();
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

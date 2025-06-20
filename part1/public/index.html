@@ -14,10 +14,10 @@
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (xhttp.readyState === 4 && xhttp.status === 200) {
-                let jsonOutput = this.responseText;
+                //let jsonOutput = this.responseText;
 
                 let image = document.createElement('img');
-                image.src = jsonOutput.data;
+                //image.src = jsonOutput.data;
                 image.alt = "Image of Dog";
 
                 document.body.appendChild(image);

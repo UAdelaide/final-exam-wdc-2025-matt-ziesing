@@ -80,10 +80,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
 
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [walkersSummary] = await db.execute(`SELECT DISTINCT username, COUNT(walker_id), AVG(rating), COUNT(status)
+    const [walkersSummary] = await db.execute(`SELECT username, COUNT(walker_id), AVG(rating), COUNT(status)
                                                 FROM WalkRatings rate JOIN Users u ON rate.walker_id = u.user_id
                                                 JOIN WalkRequests request ON rate.request_id = request.request_id
-                                                GROUP BY `);
+                                                GROUP BY u.user_id`);
     res.json(walkersSummary);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch Walkers Summary' });

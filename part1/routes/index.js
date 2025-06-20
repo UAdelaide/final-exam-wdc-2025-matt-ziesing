@@ -13,7 +13,7 @@ router.get('/api/dogs', function(req, res, next) {
       return;
     }
 
-    var query = "SELECT name, size, username from Dogs join Users on Dogs.owner";
+    var query = "SELECT name, size, username from Dogs join Users on Dogs.owner_id = Users.user_id";
     connection.query(query, function(error, rows, field) {
       connection.release();
       if (error) {

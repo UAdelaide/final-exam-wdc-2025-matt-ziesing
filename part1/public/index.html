@@ -12,17 +12,7 @@
 
     <script>
         let body = document.getElementsByClassName('body')[0];
-        let xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (xhttp.readyState === 4 && xhttp.status === 200) {
-                let jsonOutput = this.responseText;
-                let image = jsonOutput.data.message;
-
-                body.style.backgroundImage = url(image);
-            }
-        }
-        xhttp.open('GET', '/dogPic', true);
-        xhttp.send();
+        fetch('https://dog.ceo/api/breeds/image/random');
     </script>
 </body>
 </html>

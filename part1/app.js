@@ -35,17 +35,6 @@ let db;
       database: 'DogWalkService'
     });
 
-    await db.execute(`
-    CREATE TABLE IF NOT EXISTS WalkerSummary (
-    summary_id INT  AUTO_INCREMENT PRIMARY KEY,
-    walker_id INT NOT NULL,
-    total_ratings INT NOT NULL,
-    average_rating INT NOT NULL,
-    completed_walks INT NOT NULL,
-    FOREIGN KEY (walker_id) REFERENCES Users(user_id)
-    )
-    `);
-
     // Insert data if table is empty
     const [WalkApps] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
     if (WalkApps[0].count === 0) {
@@ -58,15 +47,6 @@ let db;
 
     const [WalkRatings] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (WalkRatings[0].count === 0) {
-      await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments, rated_at) VALUES
-        (1, 2, 3, 5, 'Great Walker. Dog very happy.', '2025-06-10 13:00:00'),
-        (3, 4, 2, 5, 'Really happy with their service', '2025-06-11 12:00:00')
-      `);
-    }
-
-    const [WalkerSummary] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
-    if (WalkerSummary[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments, rated_at) VALUES
         (1, 2, 3, 5, 'Great Walker. Dog very happy.', '2025-06-10 13:00:00'),

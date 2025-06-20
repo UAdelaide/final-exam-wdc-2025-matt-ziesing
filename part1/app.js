@@ -9,8 +9,11 @@ var mysql = require('mysql');
 
 var dbConnectionPool = mysql.createPool({
     host: 'localhost',
-    user: ''
+    user: 'root'
 });
+
+await connection.query('CREATE DATABASE IF NOT EXISTS testdb');
+    await connection.end();
 
 var app = express();
 

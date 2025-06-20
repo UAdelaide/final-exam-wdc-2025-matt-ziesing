@@ -50,14 +50,12 @@ function login(){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             let user_details = JSON.parse(this.responseText);
-            let user_specific = user_details.user.role;
-            if (user_details.role === 'owner') {
+            if (user_details.user.role === 'owner') {
               window.location.href = '/owner-dashboard.html';
             }
-            else if (user_details.role === 'walker') {
+            else if (user_details.user.role === 'walker') {
               window.location.href = '/walker-dashboard.html';
             }
-            console.log(user_details);
         } else if (this.readyState === 4 && this.status >= 400) {
             alert("Login failed");
         }

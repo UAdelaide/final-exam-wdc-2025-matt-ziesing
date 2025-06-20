@@ -55,6 +55,33 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// 
+// Get Dog Name from database route
+router.get('/userInfo', function(req, res) {
+  req.pool.getConnection(function(err, connection) {
+      if (err) {
+          res.sendStatus(500);
+          return;
+      }
+
+      var UserID = req.query.UserID || 1;
+      var query = "SELECT username, member_since FROM users WHERE user_id = ?";
+      connection.query(query, [UserID], function(error, rows, fields) {
+          connection.release();
+          if (err) {
+              res.sendStatus(500);
+              return;
+          }
+
+          if (!rows || rows.length === 0) {
+              res.sendStatus(404);
+              return;
+
+          }
+
+            res.json(rows);
+
+      });
+  });
+});
 
 module.exports = router;

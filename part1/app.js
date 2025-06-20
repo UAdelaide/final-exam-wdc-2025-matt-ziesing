@@ -27,6 +27,16 @@ async () => {
     });
 
     // Insert data if table is empty
+    const [WalkApps] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
+    if (rows[0].count === 0) {
+      await db.execute(`
+        INSERT INTO WalkApplications (request_id, walker_id, applied_at, status) VALUES
+        (1, 2, '2025-04-19 11:30:00, 'accepted'),
+        (3, 4, '2025-06-19 11:30:00', 'rejected'),
+        (2, 5, '2025-06-11 11:30:00', 'pending')
+      `);
+    }
+
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
     if (rows[0].count === 0) {
       await db.execute(`

@@ -95,7 +95,7 @@ function login(){
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState === 4 && xhttp.status === 200) {
       let jsonOutput = JSON.parse(this.responseText);
-      let 
+      let table = document.getElementById('dog-table');
       let dogPic;
 
       let picture_xhttp = new XMLHttpRequest();

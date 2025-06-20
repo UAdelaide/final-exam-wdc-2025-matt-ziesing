@@ -50,7 +50,9 @@ function login(){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             let user_details = this.responseText;
-            if (user_details.user === 1)
+            if (user_details.user.role === 'owner') {
+              window.location.href = '/'
+            }
             console.log(user_details);
         } else if (this.readyState === 4 && this.status >= 400) {
             alert("Login failed");

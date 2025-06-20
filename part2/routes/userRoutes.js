@@ -2,12 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-router.use(session({
-  secret: 'your-secret-key',
-  resave: false,
-  saveUninitialized: false,
-}));
-
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
   try {

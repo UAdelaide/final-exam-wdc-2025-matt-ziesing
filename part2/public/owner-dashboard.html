@@ -154,6 +154,9 @@
       let userSpecific = JSON.parse(userData);
 
       let xhttp = new XMLHttpRequest();
+      if (this.readyState === 4 && this.status === 200) {
+        let 
+      }
 
       xhttp.open('GET', '/api/users/dogs?user_id='+encodeURIComponent(userSpecific.user.user_id), true);
       xhttp.setRequestHeader("Content-type", "application/json");

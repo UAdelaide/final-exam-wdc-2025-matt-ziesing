@@ -31,7 +31,7 @@ async () => {
     if (rows[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, applied_at, status) VALUES
-        (1, 2, '2025-04-19),
+        (1, 2, '2025-04-19 11:30:00, ),
         ('To Kill a Mockingbird', 'Harper Lee'),
         ('Brave New World', 'Aldous Huxley')
       `);

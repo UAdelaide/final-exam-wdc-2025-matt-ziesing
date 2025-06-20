@@ -14,7 +14,9 @@
         let body = document.getElementsByClassName('body')[0];
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
-            if (xhttp.readyState === 4 && xhttp.)
+            if (xhttp.readyState === 4 && xhttp.status === 200) {
+                body.style.backgroundImage = 
+            }
         }
     </script>
 </body>

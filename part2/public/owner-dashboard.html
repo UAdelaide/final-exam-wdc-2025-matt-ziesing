@@ -147,9 +147,10 @@
     // Open connection to server & send the post data using a POST request
     xmlhttp.open("POST", "/api/users/login", true);
     xmlhttp.send(JSON.stringify(user));
-    }
-    window.location.href = '/';
 
+    window.location.href = '/';
+  }
+  
     document.addEventListener('DOMContentLoaded', function() {
       let userData = localStorage.getItem('user');
       let userSpecific = JSON.parse(userData);

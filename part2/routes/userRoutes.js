@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
-const session = require('express-session');
 
 router.use(session({
   secret: 'your-secret-key',
@@ -55,7 +54,7 @@ router.post('/login', async (req, res) => {
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-    
+
     req.session.userID = rows[0].user_id;
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {

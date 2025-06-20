@@ -40,7 +40,7 @@ async () => {
     const [WalkRatings] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (WalkRatings[0].count === 0) {
       await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, status) VALUES
+        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments, rated_at) VALUES
         (1, 2, '2025-04-19 11:30:00, 'accepted'),
         (3, 4, '2025-06-19 11:30:00', 'rejected'),
         (2, 5, '2025-06-11 11:30:00', 'pending')

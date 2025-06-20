@@ -153,7 +153,7 @@
       let userData = localStorage.getItem('user');
       let userSpecific = JSON.parse(userData);
 
-      let dogSelect = document.get
+      let dogSelect = document.getElementById('dogs');
 
       let xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
@@ -164,7 +164,7 @@
             newOption.value = jsonOutput.name[i];
             newOption.textContent = jsonOutput.name[i];
 
-            document.getElementById('dogs').appendChild(newOption);
+            dogSelect.appendChild(newOption);
           }
         }
       }

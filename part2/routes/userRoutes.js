@@ -66,7 +66,7 @@ router.get('/dogInfo', async (req, res) => {
       `, [userID]);
     res.json(rows);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch users' });
+    res.status(500).json({ error: 'Failed to fetch dog names' });
   }
 });
 

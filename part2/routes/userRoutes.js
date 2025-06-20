@@ -49,7 +49,6 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    req.session.userID = rows[0].user_id;
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
@@ -58,7 +57,7 @@ router.post('/login', async (req, res) => {
 
 // Get Dog Name from database route
 router.get('/dogs', async (req, res) => {
-  const userData = req.query.user_id;
+  const { userData } = req.body;
 
   try {
     const [rows] = await db.query(`

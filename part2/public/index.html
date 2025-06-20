@@ -50,7 +50,7 @@ function login(){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             let user_details = this.responseText;
-            let user_specific = user_details.user;
+            let user_specific = user_details.role;
             if (user_details.role === 'owner') {
               window.location.href = '/owner-dashboard.html';
             }

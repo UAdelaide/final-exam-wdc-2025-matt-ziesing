@@ -151,7 +151,8 @@
     window.location.href = '/';
 
     function showDogs() {
-      let userData = localStorage.getItem('user');
+      let userData = {
+        user: localStorage.getItem('user');
 
       let xhttp = new XMLHttpRequest();
 

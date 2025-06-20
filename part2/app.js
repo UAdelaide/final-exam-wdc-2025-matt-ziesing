@@ -1,9 +1,15 @@
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
+const cors = require('cors')
 require('dotenv').config();
 
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}))
 
 // Middleware
 app.use(express.json());

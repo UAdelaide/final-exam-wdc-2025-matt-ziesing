@@ -41,7 +41,7 @@ let db;
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, applied_at, status) VALUES
         (1, 2, '2025-04-19 11:30:00', 'accepted'),
-        (3, 4, '2025-06-19 11:30:00', 'rejected');
+        (3, 4, '2025-06-19 11:30:00', 'rejected')
       `);
     }
 

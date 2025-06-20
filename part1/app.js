@@ -13,7 +13,7 @@ var dbConnectionPool = mysql.createPool({
 });
 
 await connection.query('CREATE DATABASE IF NOT EXISTS testdb');
-    await connection.end();
+await connection.end();
 
 var app = express();
 

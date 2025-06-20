@@ -3,6 +3,12 @@ const router = express.Router();
 const db = require('../models/db');
 const session = require('express-session');
 
+router.use(session({
+  secret: 'your-secret-key',  // used to sign the session ID cookie
+  resave: false,              // avoid saving session if unmodified
+  saveUninitialized: false,   // only save session if something stored
+}));
+
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
   try {

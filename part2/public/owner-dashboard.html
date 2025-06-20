@@ -158,7 +158,8 @@
         let jsonOutput = JSON.parse(this.responseText);
         let dogNames;
         for (let i = 0; i < jsonOutput.length; i++) {
-          let newOption = document.creat
+          let newOption = document.createElement('option');
+          newOption.value = dogNames
         }
       }
 

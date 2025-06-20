@@ -7,7 +7,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mysql = require('mysql');
 
-async () => {
+(async () => {
   try {
     // Connect to MySQL without specifying a database
     const connection = await mysql.createConnection({
@@ -49,7 +49,7 @@ async () => {
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
-}();
+})();
 
 var app = express();
 

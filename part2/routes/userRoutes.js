@@ -56,7 +56,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Get Dog Name from database route
-router.get('/userInfo', function(req, res) {
+router.get('/dogInfo', function(req, res) {
   req.pool.getConnection(function(err, connection) {
       if (err) {
           res.sendStatus(500);

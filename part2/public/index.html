@@ -105,6 +105,7 @@ function login(){
         }
       }
       picture_xhttp.open('GET', '/api/users/dogPic');
+      picture_xhttp.send();
     }
   }
   xhttp.open('GET', '/api/users/allDogs', true);

@@ -158,11 +158,12 @@
         if (this.readyState === 4 && this.status === 200) {
           let jsonOutput = JSON.parse(this.responseText);
           for (let i = 0; i < jsonOutput.length; i++) {
-          let newOption = document.createElement('option');
-          newOption.value = jsonOutput.name[i];
-          newOption.textContent = jsonOutput.name[i];
+            let newOption = document.createElement('option');
+            newOption.value = jsonOutput.name[i];
+            newOption.textContent = jsonOutput.name[i];
 
-          document.getElementById('dogs').appendChild(newOption);
+            document.getElementById('dogs').appendChild(newOption);
+          }
         }
       }
 

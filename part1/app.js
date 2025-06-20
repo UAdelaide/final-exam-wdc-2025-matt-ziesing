@@ -63,17 +63,18 @@ app.get('/api/dogs', async (req, res) => {
     const [dogList] = await db.execute('SELECT name, size, username FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id');
     res.json(dogList);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
+    res.status(500).json({ error: 'Failed to fetch Dog List' });
   }
 });
 
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [dogList] = await db.execute('SELECT request_id, name, requested_time, duration_minutes, location,',
-                                        'username FROM WalkRequests w JOIN Dogs d ON w.dog_id = d.dog_id JOIN Users u ON d.owner_id = u.user_id');
+                                        'username FROM WalkRequests w JOIN Dogs d ON w.dog_id = d.dog_id JOIN Users u ON d.owner_id = u.user_id',
+                                        '');
     res.json(dogList);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
+    res.status(500).json({ error: 'Failed to fetch Open Requests' });
   }
 });
 

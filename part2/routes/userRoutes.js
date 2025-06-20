@@ -58,7 +58,6 @@ router.post('/login', async (req, res) => {
 router.get('/dogs', async (req, res) => {
   const userData = req.query.user_id;
 
-
   try {
     const [rows] = await db.query(`
     SELECT name FROM Dogs
@@ -66,8 +65,8 @@ router.get('/dogs', async (req, res) => {
     `, [userData]);
     res.json(rows);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch dog names' });
-  }
+    res.status(500).json({ error: 'Failed to fetch dog names' });
+  }
 });
 
 module.exports = router;

@@ -57,10 +57,11 @@ router.post('/login', async (req, res) => {
 
 // Get Dog Name from database route
 router.get('/dogInfo', async (req, res) => {
-  const userID = localStorage.
+  const userID = localStorage.getItem('user');
 
   try {
-    const [rows] = await db.query('SELECT name FROM Dogs');
+    const [rows] = await db.query('SELECT name FROM Dogs
+      ');
     res.json(rows);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });

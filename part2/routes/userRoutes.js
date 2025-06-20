@@ -56,32 +56,13 @@ router.post('/login', async (req, res) => {
 });
 
 // Get Dog Name from database route
-router.get('/dogInfo', function(req, res) {
-  req.pool.getConnection(function(err, connection) {
-      if (err) {
-          res.sendStatus(500);
-          return;
-      }
-
-      var UserID = localStorage.getItem('user');
-      var query = "SELECT name, FROM Dogs WHERE user_id = ?";
-      connection.query(query, [UserID], function(error, rows, fields) {
-          connection.release();
-          if (err) {
-              res.sendStatus(500);
-              return;
-          }
-
-          if (!rows || rows.length === 0) {
-              res.sendStatus(404);
-              return;
-
-          }
-
-            res.json(rows);
-
-      });
-  });
+router.get('/dogInfo', async (req, res) => {
+  try {
+    const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
+    res.json(rows);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
 });
 
-module.exports = router;
+module.exports = 

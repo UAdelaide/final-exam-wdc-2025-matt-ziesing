@@ -84,6 +84,7 @@ app.get('/api/walkers/summary', async (req, res) => {
                                                 summary_id INT  AUTO_INCREMENT PRIMARY KEY,
                                                 walker_id INT NOT NULL,
                                                 total_ratings INT NOT NULL,
+                                                
                                                 )`);
     res.json(walkersSummary);
   } catch (err) {

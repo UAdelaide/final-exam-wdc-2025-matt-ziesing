@@ -13,7 +13,7 @@ app.use(cookieParser());
 
 let db;
 
-(async () => {
+async () => {
   try {
     // Connect to MySQL without specifying a database
     const connection = await mysql.createConnection({
@@ -56,7 +56,7 @@ let db;
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
-})();
+}();
 
 // Route to return books as JSON
 app.get('/', async (req, res) => {

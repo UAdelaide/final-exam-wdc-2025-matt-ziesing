@@ -9,7 +9,7 @@ var mysql = require('mysql');
 
 var dbConnectionPool = mysql.createPool({
     host: 'localhost',
-    database: 'DogWalkService'
+    user: ''
 });
 
 var app = express();

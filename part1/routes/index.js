@@ -11,9 +11,10 @@ router.get('/dogPic', async(req, res, next) => {
 
   try {
     let response = await fetch('https://dog.ceo/api/breeds/image/random');
+    
   } catch (error) {
-    res.status(500).json( { 'error fetching image })
+    res.status(500).json( { error: 'error fetching image' });
   }
-})
+});
 
 module.exports = router;

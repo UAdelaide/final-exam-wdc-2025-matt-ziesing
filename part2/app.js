@@ -15,6 +15,17 @@ app.use(cors({
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    secure: false,     // true if using HTTPS
+    sameSite: 'lax'    // or 'none' if cross-site cookies
+  }
+}))
+
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');

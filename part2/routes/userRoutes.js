@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
 
 // Get Dog Name from database route
 router.get('/dogs', async (req, res) => {
-  const { userData } = req.body;
+  const userData = req.query.user_id;
 
   try {
     const [rows] = await db.query(`

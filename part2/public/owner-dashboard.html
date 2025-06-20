@@ -150,7 +150,6 @@
 
     window.location.href = '/';
 
-    function showDogs() {
       let userData = localStorage.getItem('user');
       let user = JSON.parse(userData);
       console.log(user.user.user_id);
@@ -164,8 +163,6 @@
       xhttp.setRequestHeader("Content-type", "application/json");
       xhttp.send(JSON.stringify(user_id));
     }
-
-}
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

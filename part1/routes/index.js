@@ -24,7 +24,7 @@ router.get('/api/dogs', function(req, res, next) {
         res.sendStatus(404);
         return;
       }
-      res.json(rows);
+      res.json({ dog_name });
     });
   });
 });

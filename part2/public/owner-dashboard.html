@@ -160,8 +160,9 @@
           let newOption = document.createElement('option');
           newOption.value = jsonOutput.name[i];
           newOption.textContent = jsonOutput.name[i];
+
+          document.getElementById('dogs').appendChild(newOption);
         }
-        document.getElementById('dogs').appendChild
       }
 
       xhttp.open('GET', '/api/users/dogs?user_id='+encodeURIComponent(userSpecific.user.user_id), true);

@@ -17,7 +17,7 @@
             if (xhttp.readyState === 4 && xhttp.status === 200) {
                 let jsonOutput = this.responseText;
 
-                body.style.backgroundImage = url(jsonOutput);
+                body.style.backgroundImage = "url(jsonOutput)"";
             }
         }
         xhttp.open('GET', '/dogPic', true);

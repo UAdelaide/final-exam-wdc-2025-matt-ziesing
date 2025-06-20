@@ -100,7 +100,8 @@ function login(){
       let picture_xhttp = new XMLHttpRequest();
       picture_xhttp.onreadystatechange = function() {
         if (picture_xhttp.readyState === 4 && picture_xhttp.status === 200) {
-          dogPic = 
+          let dogOutput = JSON.parse(this.responseText);
+          
         }
       }
       picture_xhttp.open('GET', '/api/users/dogPic');

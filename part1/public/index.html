@@ -18,7 +18,7 @@
                 let jsonOutput = this.responseText;
                 let image = jsonOutput.data.message;
 
-                body.style.backgroundImage = 'url(image)';
+                body.style.backgroundImage = url(image);
             }
         }
         xhttp.open('GET', '/dogPic', true);

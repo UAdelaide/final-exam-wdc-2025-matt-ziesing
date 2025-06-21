@@ -35,7 +35,7 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-// POST login (dummy version)
+// this 
 router.post('/login', async (req, res) => {
   const { user, password } = req.body;
 
@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// this 
+// this request gets the dog's that the current session owner has registered that they own
 router.get('/dogs', async (req, res) => {
   const userData = req.query.user_id;
 

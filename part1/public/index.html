@@ -53,6 +53,7 @@ And so, dogs will forever reign as the champions of joyously nonsensical adventu
         // this is how I gained the image from the dog.ceo endpoint
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
+            // gets the image and appends it into the body
             if (xhttp.readyState === 4 && xhttp.status === 200) {
                 let jsonOutput = JSON.parse(this.responseText);
                 let imageSource = jsonOutput.data;

@@ -168,6 +168,7 @@
         if (this.readyState === 4 && this.status === 200) {
           let jsonOutput = JSON.parse(this.responseText);
           for (let i = 0; i < jsonOutput.length; i++) {
+            // creates n amount of new options corresponding to the amount of dogs owned
             let newOption = document.createElement('option');
             newOption.value = jsonOutput[i].name;
             newOption.textContent = jsonOutput[i].name;
@@ -177,6 +178,7 @@
         }
       }
 
+      // encodes the 
       xhttp.open('GET', '/api/users/dogs?user_id='+encodeURIComponent(userSpecific.user.user_id), true);
       xhttp.setRequestHeader("Content-type", "application/json");
       xhttp.send();

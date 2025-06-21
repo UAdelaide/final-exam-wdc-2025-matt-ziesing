@@ -70,7 +70,7 @@ let db;
       `);
     }
 
-        // if the user's table is empty, insert more users
+    // if the dog's table is empty, insert more users
     const [Dogs] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
     if (Dogs[0].count === 0) {
       await db.execute(`
@@ -79,8 +79,22 @@ let db;
         (1, 'Max', 'medium'),
         (3, 'Bella', 'small'),
         (5, 'Cinnamon', 'large'),
-(2, 'Barky', 'small'),
-(5, 'Nutmeg', 'medium');
+        (2, 'Barky', 'small'),
+        (5, 'Nutmeg', 'medium');
+      `);
+    }
+
+    // if the dog's table is empty, insert more users
+    const [Dogs] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+    if (Dogs[0].count === 0) {
+      await db.execute(`
+        INSERT INTO Dogs (owner_id, name, size)
+        VALUES
+        (1, 'Max', 'medium'),
+        (3, 'Bella', 'small'),
+        (5, 'Cinnamon', 'large'),
+        (2, 'Barky', 'small'),
+        (5, 'Nutmeg', 'medium');
       `);
     }
   } catch (err) {

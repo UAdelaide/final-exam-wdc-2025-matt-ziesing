@@ -105,7 +105,53 @@ function login(){
     picture_xhttp.send();
   }
 
-  document.addEventListener('DOMContentLoaded')
+  document.addEventListener('DOMContentLoaded', function() {
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+      let jsonOutput = JSON.parse(this.responseText);
+      let table = document.getElementById('dog-table');
+
+      for (let i = 0; i < jsonOutput.length; i++) {
+        let wrapper = document.createElement('tr');
+
+        let dogID = jsonOutput[i].dog_id;
+        let dogIDWrapper = document.createElement('td');
+        dogIDWrapper.textContent = dogID;
+
+        let name = jsonOutput[i].name;
+        let nameWrapper = document.createElement('td');
+        nameWrapper.textContent = name;
+
+        let size = jsonOutput[i].size;
+        let sizeWrapper = document.createElement('td');
+        sizeWrapper.textContent = size;
+
+        let ownerID = jsonOutput[i].owner_id;
+        let ownerIDWrapper = document.createElement('td');
+        ownerIDWrapper.textContent = ownerID;
+
+        let dogPic = imageCall();
+
+        let imageWrapper = document.createElement('td');
+        let image = document.createElement('img');
+        image.src = dogPic;
+        image.alt = "Picture of Dog";
+        imageWrapper.appendChild('image');
+
+        wrapper.appendChild('dogIDWrapper');
+        wrapper.appendChild('nameWrapper');
+        wrapper.appendChild('sizeWrapper');
+        wrapper.appendChild('ownerIDWraper');
+        wrapper.appendChild('imageWrapper');
+
+        table.appendChild('wrapper');
+      }
+    }
+  }
+  xhttp.open('GET', '/api/users/allDogs', true);
+  xhttp.send();
+  });
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState === 4 && xhttp.status === 200) {

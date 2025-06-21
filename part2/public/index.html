@@ -96,7 +96,6 @@ function login(){
     if (xhttp.readyState === 4 && xhttp.status === 200) {
       let jsonOutput = JSON.parse(this.responseText);
       let table = document.getElementById('dog-table');
-      let dogPic;
 
       for (let i = 0; i < jsonOutput.length; i++) {
         let wrapper = document.createElement('tr');

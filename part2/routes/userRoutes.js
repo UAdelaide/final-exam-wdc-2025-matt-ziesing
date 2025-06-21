@@ -35,7 +35,7 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-// this 
+// this is the login route for users to check if they are already a signed up user
 router.post('/login', async (req, res) => {
   const { user, password } = req.body;
 

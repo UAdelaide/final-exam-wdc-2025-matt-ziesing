@@ -147,7 +147,15 @@ function login(){
   xhttp.send();
 
   function imageCall() {
-    
+    let picture_xhttp = new XMLHttpRequest();
+    picture_xhttp.onreadystatechange = function() {
+      if (picture_xhttp.readyState === 4 && picture_xhttp.status === 200) {
+        let dogOutput = JSON.parse(picture_xhttp.responseText);
+          dogPic = dogOutput.data;
+        }
+      }
+        picture_xhttp.open('GET', '/api/users/dogPic', true);
+        picture_xhttp.send();
   }
   </script>
 

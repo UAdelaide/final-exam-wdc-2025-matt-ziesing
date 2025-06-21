@@ -59,8 +59,10 @@ let db;
   }
 })();
 
+
 app.get('/api/dogs', async (req, res) => {
   try {
+    // this query gets a li
     const [dogList] = await db.execute(`SELECT name AS dog_name, size, username AS owner_username
                                         FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id`);
     res.json(dogList);

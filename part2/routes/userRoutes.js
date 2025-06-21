@@ -55,6 +55,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// this 
 router.get('/dogs', async (req, res) => {
   const userData = req.query.user_id;
 
@@ -69,7 +70,7 @@ router.get('/dogs', async (req, res) => {
   }
 });
 
-// this function gets all the dog info 
+// this function gets all the dog info from the Dogs table in the database
 router.get('/allDogs', async (req, res) => {
   try {
     const [rows] = await db.query(`

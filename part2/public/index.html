@@ -91,7 +91,6 @@ function login(){
 
 }
 
-  function imageCall() {
     let dogPic;
     let picture_xhttp = new XMLHttpRequest();
     picture_xhttp.onreadystatechange = function() {
@@ -103,7 +102,6 @@ function login(){
     }
     picture_xhttp.open('GET', '/api/users/dogPic', true);
     picture_xhttp.send();
-  }
 
   document.addEventListener('DOMContentLoaded', function() {
   let xhttp = new XMLHttpRequest();
@@ -130,8 +128,6 @@ function login(){
         let ownerID = jsonOutput[i].owner_id;
         let ownerIDWrapper = document.createElement('td');
         ownerIDWrapper.textContent = ownerID;
-
-        let dogPic = imageCall();
 
         let imageWrapper = document.createElement('td');
         let image = document.createElement('img');

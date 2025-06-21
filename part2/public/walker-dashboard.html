@@ -58,6 +58,7 @@
         }
 
         async function getCurrentUser() {
+          // gets the session info
           let userData = localStorage.getItem('user');
           let userSpecific = JSON.parse(userData);
 

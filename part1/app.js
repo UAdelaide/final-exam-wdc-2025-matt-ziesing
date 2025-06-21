@@ -45,7 +45,8 @@ let db;
       `);
     }
 
-    // this database query checks if there are any walk ratings in the database, and if not, it adds more
+    // this database query checks if there are any walk ratings in the database, and if not,
+    // it adds more
     const [WalkRatings] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (WalkRatings[0].count === 0) {
       await db.execute(`

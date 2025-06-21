@@ -69,6 +69,7 @@ router.get('/dogs', async (req, res) => {
   }
 });
 
+// this function gets all the dog info 
 router.get('/allDogs', async (req, res) => {
   try {
     const [rows] = await db.query(`
@@ -79,6 +80,7 @@ router.get('/allDogs', async (req, res) => {
   }
 });
 
+// this route gets a random dog image from the dog.ceo API
 router.get('/dogPic', async(req, res, next) => {
   res.set('Content-Type', 'application/json');
 

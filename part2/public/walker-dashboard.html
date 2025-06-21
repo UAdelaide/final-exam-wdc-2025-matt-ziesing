@@ -106,6 +106,7 @@
     xmlhttp.open("POST", "/api/users/login", true);
     xmlhttp.send(JSON.stringify(user));
 
+    // this sends the user to the home landing page to re-sign in
     window.location.href = '/';
 
 }

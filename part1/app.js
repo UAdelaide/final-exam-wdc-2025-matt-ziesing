@@ -74,13 +74,13 @@ let db;
     const [Dogs] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
     if (Dogs[0].count === 0) {
       await db.execute(`
-        INSERT INTO Users (username, email, password_hash, role)
+        INSERT INTO Dogs (owner_id, name, size)
         VALUES
-        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-        ('matteeo', 'matt@example.com', 'mattmattmatt', 'walker'),
-        ('hannhann', 'hannah@example.com', 'hann123', 'owner');
+        (1, 'Max', 'medium'),
+        (3, 'Bella', 'small'),
+        (5, 'Cinnamon', 'large'),
+(2, 'Barky', 'small'),
+(5, 'Nutmeg', 'medium');
       `);
     }
   } catch (err) {

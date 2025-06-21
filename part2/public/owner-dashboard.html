@@ -135,11 +135,13 @@
     }).mount('#app');
 
     function logout(){
+      // this removes the session from the webpage
       localStorage.removeItem('user');
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
 
+    // this resets the login data at the /api/users/login endpoint
     let user = {
         user: "",
         pass: ""

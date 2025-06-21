@@ -95,6 +95,7 @@ function login(){
     xhttp.onreadystatechange = function() {
     if (xhttp.readyState === 4 && xhttp.status === 200) {
       let jsonOutput = JSON.parse(this.responseText);
+      // gets the table already made in the html site
       let table = document.getElementById('dog-table');
 
       for (let i = 0; i < jsonOutput.length; i++) {

@@ -84,9 +84,9 @@ let db;
       `);
     }
 
-    // if the dog's table is empty, insert more users
-    const [Dogs] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
-    if (Dogs[0].count === 0) {
+    // if the walk requests table is empty, insert more users
+    const [WalkRequests] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+    if (WalkRequests[0].count === 0) {
       await db.execute(`
         INSERT INTO Dogs (owner_id, name, size)
         VALUES

@@ -151,10 +151,12 @@
     xmlhttp.open("POST", "/api/users/login", true);
     xmlhttp.send(JSON.stringify(user));
 
+    // sends the user back to the home landing page
     window.location.href = '/';
   }
 
     document.addEventListener('DOMContentLoaded', function() {
+      // gets the session data and parses it through
       let userData = localStorage.getItem('user');
       let userSpecific = JSON.parse(userData);
 

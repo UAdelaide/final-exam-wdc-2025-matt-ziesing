@@ -120,6 +120,7 @@ function login(){
         let image = document.createElement('img');
 
         let picture_xhttp = new XMLHttpRequest();
+        let dogPic;
         picture_xhttp.onreadystatechange = function() {
           if (picture_xhttp.readyState === 4 && picture_xhttp.status === 200) {
             let dogOutput = JSON.parse(picture_xhttp.responseText);

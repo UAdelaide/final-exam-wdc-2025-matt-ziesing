@@ -55,6 +55,15 @@ let db;
         (3, 4, 2, 5, 'Really happy with their service', '2025-06-11 12:00:00')
       `);
     }
+
+    const [Users] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+    if (WalkRatings[0].count === 0) {
+      await db.execute(`
+        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments, rated_at) VALUES
+        (1, 2, 3, 5, 'Great Walker. Dog very happy.', '2025-06-10 13:00:00'),
+        (3, 4, 2, 5, 'Really happy with their service', '2025-06-11 12:00:00')
+      `);
+    }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }

@@ -59,9 +59,13 @@ let db;
     const [Users] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (WalkRatings[0].count === 0) {
       await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments, rated_at) VALUES
-        (1, 2, 3, 5, 'Great Walker. Dog very happy.', '2025-06-10 13:00:00'),
-        (3, 4, 2, 5, 'Really happy with their service', '2025-06-11 12:00:00')
+        INSERT INTO Users (username, email, password_hash, role)
+VALUES
+('alice123', 'alice@example.com', 'hashed123', 'owner'),
+('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+('carol123', 'carol@example.com', 'hashed789', 'owner'),
+('matteeo', 'matt@example.com', 'mattmattmatt', 'walker'),
+('hannhann', 'hannah@example.com', 'hann123', 'owner');
       `);
     }
   } catch (err) {

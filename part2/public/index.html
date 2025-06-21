@@ -97,15 +97,15 @@ function login(){
       if (picture_xhttp.readyState === 4 && picture_xhttp.status === 200) {
         let dogOutput = JSON.parse(picture_xhttp.responseText);
         dogPic = dogOutput.data;
-        return dogPic;
+
       }
     }
     picture_xhttp.open('GET', '/api/users/dogPic', true);
     picture_xhttp.send();
 
   document.addEventListener('DOMContentLoaded', function() {
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
     if (xhttp.readyState === 4 && xhttp.status === 200) {
       let jsonOutput = JSON.parse(this.responseText);
       let table = document.getElementById('dog-table');
@@ -141,7 +141,7 @@ function login(){
         wrapper.appendChild(ownerIDWraper);
         wrapper.appendChild(imageWrapper);
 
-        table.appendChild('wrapper');
+        table.appendChild(wrapper);
       }
     }
   }

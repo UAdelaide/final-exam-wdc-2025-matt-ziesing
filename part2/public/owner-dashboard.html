@@ -19,6 +19,7 @@
       <div class="card-body">
         <form @submit.prevent="submitWalkRequest">
           <div class="mb-3">
+            <!--  this is how users are now able to choose their dog from a drop down list  -->
             <label class="form-label">Select Your Dog</label>
             <select id="dogs" class="form-control">
               <option selected>-- Choose a dog --</option>
@@ -150,7 +151,7 @@
 
     window.location.href = '/';
   }
-  
+
     document.addEventListener('DOMContentLoaded', function() {
       let userData = localStorage.getItem('user');
       let userSpecific = JSON.parse(userData);

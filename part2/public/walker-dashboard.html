@@ -58,18 +58,19 @@
         }
 
         async function getCurrentUser() {
-          // gets the session info
+          // gets the session info and parses it
           let userData = localStorage.getItem('user');
           let userSpecific = JSON.parse(userData);
 
+          // returns the user id from the session info
           let user_id = userSpecific.user.user_id;
           return user_id;
         }
 
         async function applyToWalk(requestId) {
           try {
+            // gets the info from the function
             let walkerId = await getCurrentUser();
-            console.log(walkerId);
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },

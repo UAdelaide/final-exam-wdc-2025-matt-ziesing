@@ -98,7 +98,9 @@ function login(){
       // gets the table already made in the html site
       let table = document.getElementById('dog-table');
 
+      // repeats for all dogs found in the backend call
       for (let i = 0; i < jsonOutput.length; i++) {
+        // creates the wrapper for the new entry
         let wrapper = document.createElement('tr');
 
         let dogID = jsonOutput[i].dog_id;

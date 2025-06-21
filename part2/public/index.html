@@ -74,10 +74,11 @@ function login(){
             // sets a session to be the user details for other function usage
             localStorage.setItem('user', JSON.stringify(user_details));
             if (user_details.user.role === 'owner') {
-              // send the user to 
+              // send the user to owner page if they are an owner
               window.location.href = '/owner-dashboard.html';
             }
             else if (user_details.user.role === 'walker') {
+              // send the user to walker page if ther are a walker
               window.location.href = '/walker-dashboard.html';
             }
         } else if (this.readyState === 4 && this.status >= 400) {

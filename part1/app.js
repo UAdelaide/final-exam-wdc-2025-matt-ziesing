@@ -62,7 +62,7 @@ let db;
 
 app.get('/api/dogs', async (req, res) => {
   try {
-    // this query gets a li
+    // this query gets a list of dog and the owner's name with them
     const [dogList] = await db.execute(`SELECT name AS dog_name, size, username AS owner_username
                                         FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id`);
     res.json(dogList);
@@ -73,6 +73,7 @@ app.get('/api/dogs', async (req, res) => {
 
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
+    // this query gets a list of walk requests that are open
     const [openRequests] = await db.execute(`SELECT request_id, name AS dog_name, requested_time, duration_minutes,
                                             location, username AS owner_username
                                             FROM WalkRequests w JOIN Dogs d ON w.dog_id = d.dog_id

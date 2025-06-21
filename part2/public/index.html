@@ -130,7 +130,7 @@ function login(){
             let dogOutput = JSON.parse(picture_xhttp.responseText);
             dogPic = dogOutput.data;
 
-            // sets the kima
+            // sets the image src and height constraints and then appends it to a table entry
             image.src = dogPic;
             image.alt = "Picture of Dog";
             image.style.height = '50%';
@@ -141,6 +141,7 @@ function login(){
         picture_xhttp.open('GET', '/api/users/dogPic', true);
         picture_xhttp.send();
 
+        // appends all table entries together
         wrapper.appendChild(dogIDWrapper);
         wrapper.appendChild(nameWrapper);
         wrapper.appendChild(sizeWrapper);

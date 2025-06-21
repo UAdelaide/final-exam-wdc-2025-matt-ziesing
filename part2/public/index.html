@@ -98,7 +98,6 @@ function login(){
       if (picture_xhttp.readyState === 4 && picture_xhttp.status === 200) {
         let dogOutput = JSON.parse(this.responseText);
         dogPic = dogOutput.data;
-        console.log(dogPic);
         return dogPic;
       }
     }

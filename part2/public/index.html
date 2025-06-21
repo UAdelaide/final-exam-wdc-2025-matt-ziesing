@@ -122,6 +122,7 @@ function login(){
         let imageWrapper = document.createElement('td');
         let image = document.createElement('img');
 
+        // gets a random dog image from the dog API
         let picture_xhttp = new XMLHttpRequest();
         let dogPic;
         picture_xhttp.onreadystatechange = function() {
@@ -129,7 +130,7 @@ function login(){
             let dogOutput = JSON.parse(picture_xhttp.responseText);
             dogPic = dogOutput.data;
 
-
+            // sets the kima
             image.src = dogPic;
             image.alt = "Picture of Dog";
             image.style.height = '50%';

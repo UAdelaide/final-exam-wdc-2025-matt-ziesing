@@ -97,13 +97,13 @@ function login(){
       if (picture_xhttp.readyState === 4 && picture_xhttp.status === 200) {
         let dogOutput = JSON.parse(picture_xhttp.responseText);
         dogPic = dogOutput.data;
-        createTable();
+        createTable(dogPic);
       }
     }
     picture_xhttp.open('GET', '/api/users/dogPic', true);
     picture_xhttp.send();
 
-  function createTable() {
+  function createTable(dogPic) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
     if (xhttp.readyState === 4 && xhttp.status === 200) {

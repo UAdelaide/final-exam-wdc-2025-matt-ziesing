@@ -45,6 +45,7 @@ let db;
       `);
     }
 
+    // this database query 
     const [WalkRatings] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (WalkRatings[0].count === 0) {
       await db.execute(`

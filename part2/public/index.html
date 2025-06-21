@@ -105,6 +105,7 @@ function login(){
     picture_xhttp.send();
   }
 
+  document.addEventListener('DOMContentLoaded')
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState === 4 && xhttp.status === 200) {

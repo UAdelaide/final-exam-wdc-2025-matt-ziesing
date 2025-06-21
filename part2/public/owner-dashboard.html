@@ -178,7 +178,7 @@
         }
       }
 
-      // encodes the 
+      // encodes the user_id to the backend routing to get the dogs that are owned by the specific owner
       xhttp.open('GET', '/api/users/dogs?user_id='+encodeURIComponent(userSpecific.user.user_id), true);
       xhttp.setRequestHeader("Content-type", "application/json");
       xhttp.send();

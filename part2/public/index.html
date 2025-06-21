@@ -71,8 +71,10 @@ function login(){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             let user_details = JSON.parse(this.responseText);
+            // sets a session to be the user details for other function usage
             localStorage.setItem('user', JSON.stringify(user_details));
             if (user_details.user.role === 'owner') {
+              // send the user to 
               window.location.href = '/owner-dashboard.html';
             }
             else if (user_details.user.role === 'walker') {

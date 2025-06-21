@@ -77,7 +77,8 @@
         }
 
         async function getCurrentUser() {
-          
+          let userData = localStorage.getItem('user');
+          let userSpecific = JSON.parse(userData);
         }
 
         onMounted(() => {
